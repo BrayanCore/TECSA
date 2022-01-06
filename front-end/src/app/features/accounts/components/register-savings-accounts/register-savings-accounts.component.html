@@ -1,0 +1,45 @@
+<body>
+    
+    <app-header></app-header>
+    <div id="content">
+
+        <h1>ALTA DE CUENTAS DE AHORRO</h1>
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Clientes</mat-label>
+              <input type="text"
+                     placeholder="Selecciona el cliente"
+                     aria-label="Clientes"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete (optionSelected)="customerSelected($event)" #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option.name}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+        </form>
+        
+
+        <div class="data">
+            <p class="title">No. Cuenta</p>
+            <p class="subtitle">{{customer._id ? customer._id : '?'}}</p>
+        </div>
+
+        <div class="data">
+            <p class="title">Saldo Inicial</p>
+            <p class="subtitle">$0.00</p>
+        </div>
+
+        <div class="data">
+            <p class="title">ID</p>
+            <p class="subtitle">{{(this.savingsAccounts.length)+(1)}}</p>
+        </div>
+
+        <button [disabled]="!customer._id" (click)="createSavingAccount()" mat-raised-button>GENERAR CUENTA DE AHORRO</button>
+
+    </div>
+
+</body>

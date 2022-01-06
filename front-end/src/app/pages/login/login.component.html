@@ -1,0 +1,31 @@
+<div id="main">
+
+    <div id="company-data">
+        <img src="https://tecreemos.com/wp-content/uploads/2017/08/Logo-TCR-outline-small.png" alt="TeCreemosLogo">
+    </div>
+
+    <div id="square-login">
+
+        <form [formGroup]="loginForm" id="form">
+
+            <h1>Bienvenido a TeCreemosSystem</h1>
+
+            <mat-form-field class="field" appearance="outline">
+                <mat-label>TeCreemos@gmail.com</mat-label>
+                <input type="email" formControlName="email" matInput placeholder="Ingresa tu correo...">
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="field" appearance="outline">
+                <mat-label>****</mat-label>
+                <input type="password" formControlName="password" matInput placeholder="Ingresa tu contrasena...">
+                <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+        
+            <button [disabled]="!loginForm.valid" (click)="loggUser()" id="button" mat-raised-button color="primary">ENVIAR</button>
+
+        </form>
+
+    </div>
+
+</div>

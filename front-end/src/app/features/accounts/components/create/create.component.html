@@ -1,0 +1,47 @@
+<body>
+    
+    <app-header></app-header>
+    <form [formGroup]="customerForm" id="content">
+
+        <h1>INGRESA LOS DATOS DEL NUEVO CLIENTE</h1>
+
+        <div>
+            <h2>Nombre</h2>
+            <mat-form-field class="large-field" appearance="outline">
+                <input formControlName="name" id="name" type="text" matInput placeholder="Introudce el nombre del cliente">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <h2>Direccion</h2>
+            <mat-form-field class="large-field" appearance="outline">
+                <input formControlName="address" id="address" type="text" matInput placeholder="Introduce el domicilio del cliente">
+                <mat-icon matSuffix>house</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div id="shared-space">
+            <div class="shared-div">
+                <h2>Edad</h2>
+                <mat-form-field class="half-field" appearance="outline">
+                    <input formControlName="age" type="number" matInput placeholder="Introduce la edad">
+                </mat-form-field>
+            </div>
+
+            <div class="shared-div">
+                <h2>Genero</h2>
+                <mat-form-field class="half-field" appearance="fill">
+                    <mat-select formControlName="genre">
+                        <mat-option [value]="'Masculino'">Masculino</mat-option>
+                        <mat-option [value]="'Femenino'">Femenino</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <button [disabled]="!customerForm.valid" (click)="createCustomer()" mat-raised-button color="primary">GENERAR CLIENTE</button>
+
+    </form>
+
+</body>

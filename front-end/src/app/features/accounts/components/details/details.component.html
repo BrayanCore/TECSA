@@ -1,0 +1,50 @@
+<body>
+    
+    <app-header></app-header>
+    <div id="content">
+
+        <p> Miembro desde: {{ customer.createdAt | date : 'dd/MM/yyyy' }}</p>
+
+        <h1>{{customer.name}}</h1>
+
+        <div id="container">
+
+            <h2>Depositos</h2>
+            <div class="space-targets">
+                <div *ngFor="let item of deposits" id="target">
+                    <span id="label">
+
+                    </span>
+                    <h3 id="amount">
+                        ${{ item.monto | number }}
+                    </h3>
+                    <h3 id="date">
+                        {{ item.fechaUltimaAct | date : 'dd/MM/yyyy' }}
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="container">
+
+            <h2>Retiros</h2>
+            <div class="space-targets">
+                <div *ngFor="let item of withdrawals" id="target">
+                    <span style="background-color: #BF2D2D;" id="label">
+
+                    </span>
+                    <h3 id="amount">
+                        ${{ item.monto | number }}
+                    </h3>
+                    <h3 id="date">
+                        {{ item.fechaUltimaAct | date : 'dd/MM/yyyy' }}
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+
+</body>

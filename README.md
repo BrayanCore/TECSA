@@ -10,16 +10,14 @@ Requirements:
 
 ### HOW TO RUN IT ###
 
-Angular App:
+- Angular App:
 1. Write on terminal 'ng serve'
 
-MongoDB database:
+ - MongoDB database:
 2. Start to run server writing on terminal 'mongod'
 
-NestJS API:
+ - NestJS API:
 3. Turn on API REST writing on terminal 'npm run start:dev'
 
-READY!!
+# READY!!
 NOW YOU CAN START TO USE THE APP, ENJOY IT!.
-
-### END ###
